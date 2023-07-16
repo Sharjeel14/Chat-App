@@ -48,11 +48,6 @@ body {
     transition: 200ms ease-in;
 }
 
-
-
-
-
-
 .main .mobile {
     z-index: 10;
     position: absolute;
