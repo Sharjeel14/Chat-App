@@ -1,0 +1,233 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;700;800;900&display=swap');
+
+:root {
+    --pale-violet: hsl(276, 100%, 81%);
+    --moderate-violet: hsl(276, 55%, 52%);
+    --desaturated-dark-violet: hsl(271, 15%, 43%);
+    --grayish-blue: hsl(206, 6%, 79%);
+    --very-dark-desaturated-violet: hsl(271, 36%, 24%);
+    --dark-grayish-violet: hsl(270, 7%, 64%);
+
+    --light-magenta: hsl(293, 100%, 63%);
+    --light-violet: hsl(264, 100%, 61%);
+
+    --secondary-white: hsl(0, 0%, 100%);
+    --light-grayish-violet: hsl(270, 20%, 96%);
+    --very-dark-desaturated-violet-bg: hsl(271, 36%, 24%);
+    --very-light-magenta: hsl(289, 100%, 72%);
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Rubik', sans-serif;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+.main {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    transition: 200ms ease-in;
+}
+
+
+.main .left-side {
+    background-image: linear-gradient(to top left,
+            hsl(264, 100%, 61%),
+            hsl(293, 100%, 63%));
+    z-index: -1;
+    width: 25%;
+    border-radius: 0 0 1000px 500px;
+    height: 85%;
+    transition: 200ms ease-in;
+}
+
+
+
+
+
+
+.main .mobile {
+    z-index: 10;
+    position: absolute;
+    top: 15%;
+    left: 20%;
+    background-color: var(--secondary-white);
+    height: 550px;
+    width: 280px;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 30px 90px;
+    border-radius: 40px;
+    transition: 200ms ease-in;
+}
+
+.mobile .header {
+    margin: 0 auto;
+    background: linear-gradient(var(--light-violet), var(--light-magenta));
+    position: relative;
+    top: 15px;
+    height: 95px;
+    width: 260px;
+    border-radius: 20px 20px 10px 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--secondary-white);
+    transition: 200ms ease-in;
+
+}
+
+.mobile .first-side {
+    margin-top: 15px;
+    width: 60%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    transition: 200ms ease-in;
+}
+
+.mobile .dots {
+    margin-top: 15px;
+    width: 20%;
+}
+
+.mobile .dots i {
+    margin-left: 34px;
+}
+
+.mobile .header::before {
+    content: '';
+    position: absolute;
+    top: 0px;
+    left: 60px;
+    height: 28px;
+    width: 55%;
+    background-color: var(--secondary-white);
+    border-radius: 0 0 15px 15px;
+}
+
+.mobile .header .profile-pic img {
+    width: 34px;
+    border: 2px solid var(--secondary-white);
+    border-radius: 50%;
+}
+
+.mobile .header .profile-data h4 {
+    font-size: 13px;
+    font-weight: 400;
+}
+
+.mobile .header .profile-data p {
+    font-size: 11px;
+    font-weight: 300;
+    color: var(--light-grayish-violet);
+    opacity: 0.5;
+}
+
+.main .mobile .body {
+    width: 93%;
+    height: 428px;
+    position: relative;
+    top: 10px;
+    background-color: var(--light-grayish-violet);
+    margin: 0 auto;
+    border-radius: 0 0 30px 30px;
+    transition: 200ms ease-in;
+}
+
+.main .right-side {
+    width: 70%;
+    height: 100%;
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    transition: 200ms ease-in;
+}
+
+.main .right-side .content {
+    width: 40%;
+    height: 50%;
+    position: relative;
+    left: 300px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    z-index: 12;
+}
+
+.main .right-side .content h1 {
+    font-size: 35px;
+    margin-bottom: 30px;
+    font-weight: 700;
+    color: var(--very-dark-desaturated-violet);
+}
+
+.main .right-side .content p {
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--desaturated-dark-violet);
+    line-height: 30px;
+}
+
+
+
+.main .transparent-side {
+    position: absolute;
+    width: 20%;
+    height: 90%;
+    bottom: 0px;
+    right: 0px;
+    transform: scale(-1);
+    background: linear-gradient(var(--light-violet), var(--light-magenta));
+    opacity: 0.1;
+    border-radius: 0px 0px 300px 0px;
+    z-index: 0;
+    transition: 200ms ease-in;
+}
+
+@media screen and (max-width:768px) {
+    .main {
+        display: block;
+    }
+
+    .main .left-side {
+        width: 50%;
+        height: 60%;
+        border-radius: 0px 0px 300px 0px;
+        z-index: 0;
+    }
+
+    .main .right-side {
+        width: 100%;
+        height: 70%;
+        justify-content: center;
+    }
+
+    .main .right-side .content {
+        width: 90%;
+        position: relative;
+        left: 0;
+        top: 100px;
+        height: auto;
+        text-align: center;
+    }
+
+    .main .mobile {
+        top: 45%;
+
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .main .transparent-side {
+        top: 65%;
+        width: 50%;
+        height: 70%;
+    }
+
+}
